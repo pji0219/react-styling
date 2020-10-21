@@ -1,25 +1,35 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import Button from './components/Button';
+import './App.scss';
 
 function App() {
+ 
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
+      <div className="buttons">
+        <Button size="small" outline={true}>BUTTON</Button> {/* outline을 true로 설정*/}
+        <Button color="gray" outline={true}>BUTTON</Button>
+        <Button color="pink" size="large" outline={true}>BUTTON</Button>
+      </div>
+      <div className="buttons">
+        <Button size="large" fullWidth={true}>BUTTON</Button> {/* fullWidth를 true */}
+        <Button color="gray" size="large" fullWidth={true}>BUTTON</Button>
+        <Button 
+        color="pink" 
+        size="large" 
+        fullWidth={true} 
+        onClick={ () => {
+          console.log('클릭!');
+        }}
+        onMouseMove={ () => {
+          console.log('마우스 무브!');
+        }}
         >
-          Learn React
-        </a>
-      </header>
+          BUTTON
+        </Button>
+      </div>
     </div>
+    
   );
 }
 
