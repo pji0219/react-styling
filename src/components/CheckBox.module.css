@@ -1,0 +1,32 @@
+.checkbox {
+    display: flex;
+    align-items: center;
+}
+
+.checkbox label {
+    cursor: pointer;
+}
+
+.checkbox input { /* checkbox에 있는 input을 숨겨줌 */
+    width: 0;
+    height: 0;
+    position: absolute;
+    opacity: 0;
+}
+
+.checkbox span {
+    font-size: 1.125rem;
+    font-weight: bold;
+}
+
+.icon {
+    display: flex;
+    align-items: center;
+    font-size: 2rem; /* 아이콘의 크기는 font-size로 지정해줄 수 있다. */
+    margin-right: 0.25rem;
+    color: #adb5bd;
+}
+
+.checked {
+    color: #339af0; /* 체크했을 때의 색 */
+}
