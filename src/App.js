@@ -1,19 +1,26 @@
-import React, { useState } from 'react';
-import CheckBox from './components/CheckBox';
+import React from 'react';
+import styled, { css } from 'styled-components'; // 템플릿 리터럴 내의 props 내에서 또 props를 선언하고 싶으면 css를 선언해주면 된다.
+
+const Circle = styled.div` // 원을 만드는 styled-components
+  width: 5rem;
+  height: 5rem;
+  background: ${props => props.color}; // 배경색을 props로 받아옴
+  border-radius: 50%;
+  ${props => // 크기 props
+    props.huge &&
+   css`
+      width: 10rem;
+      height: 10rem;
+   `}
+`;
 
 function App() {
-  const [check, setcheck] = useState(false);
-  const onChange = e => {
-    setcheck(e.target.checked);
-  }
  
   return (
-    <div>
-      <CheckBox onChange={onChange} checked={check}>
-        다음 약관에 모두 동의
-      </CheckBox>
-    </div>
-    
+    <>
+      <Circle color="skyblue" />
+      <Circle color="blue" huge />
+    </>
   );
 }
 
