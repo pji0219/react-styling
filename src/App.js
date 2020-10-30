@@ -1,26 +1,39 @@
 import React from 'react';
-import styled, { css } from 'styled-components'; // 템플릿 리터럴 내의 props 내에서 또 props를 선언하고 싶으면 css를 선언해주면 된다.
+import styled, { ThemeProvider } from 'styled-components'; // ThemeProvider를 사용하면 styled-components를 사용하는 모든 컴포넌트에서 색상을 지정할 수 있다.
+import Button2 from './components/Button2';
 
-const Circle = styled.div` // 원을 만드는 styled-components
-  width: 5rem;
-  height: 5rem;
-  background: ${props => props.color}; // 배경색을 props로 받아옴
-  border-radius: 50%;
-  ${props => // 크기 props
-    props.huge &&
-   css`
-      width: 10rem;
-      height: 10rem;
-   `}
+const AppBlock = styled.div`
+  width: 512px;
+  margin: 0 auto;
+  margin-top: 4rem;
+  border: 1px solid black;
+  padding: 1rem;
 `;
+
+const ButtonGroup = styled.div`
+  & + & {
+    margin-top: 1rem;
+  }
+`;
+
+const palette = {
+  blue: '#228be6',
+  gray: '#496057',
+  pink: '#f06595'
+};
 
 function App() {
  
   return (
-    <>
-      <Circle color="skyblue" />
-      <Circle color="blue" huge />
-    </>
+    <ThemeProvider theme={{palette}}> {/* ThemeProvider 사용 */}
+      <AppBlock>
+        <ButtonGroup>
+          <Button2 color="blue" size="small">BUTTON</Button2>
+          <Button2 color="pink" size="medium">BUTTON</Button2>
+          <Button2 color="gray" size="large">BUTTON</Button2>
+        </ButtonGroup>
+      </AppBlock>
+   </ThemeProvider>
   );
 }
 
