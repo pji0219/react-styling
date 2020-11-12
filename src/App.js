@@ -37,6 +37,11 @@ function App() {
           <Button2 color="pink" size="medium" outline>BUTTON</Button2>
           <Button2 color="gray" size="large" outline>BUTTON</Button2> {/* outline = outline={true} */}
         </ButtonGroup>
+        <ButtonGroup>
+          <Button2 color="blue" size="large" fullWidth>BUTTON</Button2>
+          <Button2 color="pink" size="large" fullWidth>BUTTON</Button2>
+          <Button2 color="gray" size="large" fullWidth>BUTTON</Button2>
+        </ButtonGroup>
       </AppBlock>
    </ThemeProvider>
   );
